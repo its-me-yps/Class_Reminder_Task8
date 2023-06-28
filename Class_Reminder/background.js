@@ -48,7 +48,7 @@ function setNotification(){
       title = x[i].title
       if(calculateTimeDifference(ClassTime, 0)){
         p = 0
-        if(calculateTimeDifference(ClassTime,0) < 15*6000){
+        if(calculateTimeDifference(ClassTime,0) < 15*60*1000){
           Notify_urgent(ClassTime, title);
           return
         }
@@ -57,10 +57,10 @@ function setNotification(){
           return
         }
       }
-      if(p){
-        Notify_no_class();
-        return
-      }
+    }
+    if(p){
+      Notify_no_class();
+      return
     }
   });
 }
